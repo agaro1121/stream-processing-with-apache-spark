@@ -1,0 +1,257 @@
+// 20190717211100
+// http://localhost:4040/metrics/json/
+
+{
+  "version": "3.1.3",
+  "gauges": {
+    "local-1563412146036.driver.BlockManager.disk.diskSpaceUsed_MB": {
+      "value": 0
+    },
+    "local-1563412146036.driver.BlockManager.memory.maxMem_MB": {
+      "value": 4189
+    },
+    "local-1563412146036.driver.BlockManager.memory.maxOffHeapMem_MB": {
+      "value": 0
+    },
+    "local-1563412146036.driver.BlockManager.memory.maxOnHeapMem_MB": {
+      "value": 4189
+    },
+    "local-1563412146036.driver.BlockManager.memory.memUsed_MB": {
+      "value": 1
+    },
+    "local-1563412146036.driver.BlockManager.memory.offHeapMemUsed_MB": {
+      "value": 0
+    },
+    "local-1563412146036.driver.BlockManager.memory.onHeapMemUsed_MB": {
+      "value": 1
+    },
+    "local-1563412146036.driver.BlockManager.memory.remainingMem_MB": {
+      "value": 4187
+    },
+    "local-1563412146036.driver.BlockManager.memory.remainingOffHeapMem_MB": {
+      "value": 0
+    },
+    "local-1563412146036.driver.BlockManager.memory.remainingOnHeapMem_MB": {
+      "value": 4187
+    },
+    "local-1563412146036.driver.DAGScheduler.job.activeJobs": {
+      "value": 1
+    },
+    "local-1563412146036.driver.DAGScheduler.job.allJobs": {
+      "value": 24
+    },
+    "local-1563412146036.driver.DAGScheduler.stage.failedStages": {
+      "value": 0
+    },
+    "local-1563412146036.driver.DAGScheduler.stage.runningStages": {
+      "value": 1
+    },
+    "local-1563412146036.driver.DAGScheduler.stage.waitingStages": {
+      "value": 0
+    },
+    "local-1563412146036.driver.LiveListenerBus.queue.appStatus.size": {
+      "value": 0
+    },
+    "local-1563412146036.driver.LiveListenerBus.queue.executorManagement.size": {
+      "value": 0
+    },
+    "local-1563412146036.driver.spark.streaming.urlranks.eventTime-watermark": {
+      "value": 0
+    },
+    "local-1563412146036.driver.spark.streaming.urlranks.inputRate-total": {
+      "value": 4033.8134001252347
+    },
+    "local-1563412146036.driver.spark.streaming.urlranks.latency": {
+      "value": 4725
+    },
+    "local-1563412146036.driver.spark.streaming.urlranks.processingRate-total": {
+      "value": 4090.1587301587306
+    },
+    "local-1563412146036.driver.spark.streaming.urlranks.states-rowsTotal": {
+      "value": 409370
+    },
+    "local-1563412146036.driver.spark.streaming.urlranks.states-usedBytes": {
+      "value": 110837751
+    }
+  },
+  "counters": {
+    "local-1563412146036.driver.HiveExternalCatalog.fileCacheHits": {
+      "count": 0
+    },
+    "local-1563412146036.driver.HiveExternalCatalog.filesDiscovered": {
+      "count": 0
+    },
+    "local-1563412146036.driver.HiveExternalCatalog.hiveClientCalls": {
+      "count": 0
+    },
+    "local-1563412146036.driver.HiveExternalCatalog.parallelListingJobCount": {
+      "count": 0
+    },
+    "local-1563412146036.driver.HiveExternalCatalog.partitionsFetched": {
+      "count": 0
+    },
+    "local-1563412146036.driver.LiveListenerBus.numEventsPosted": {
+      "count": 10139
+    },
+    "local-1563412146036.driver.LiveListenerBus.queue.appStatus.numDroppedEvents": {
+      "count": 0
+    },
+    "local-1563412146036.driver.LiveListenerBus.queue.executorManagement.numDroppedEvents": {
+      "count": 0
+    }
+  },
+  "histograms": {
+    "local-1563412146036.driver.CodeGenerator.compilationTime": {
+      "count": 14,
+      "max": 158,
+      "mean": 26.992226903239825,
+      "min": 4,
+      "p50": 8.0,
+      "p75": 20.0,
+      "p95": 158.0,
+      "p98": 158.0,
+      "p99": 158.0,
+      "p999": 158.0,
+      "stddev": 43.13952116313984
+    },
+    "local-1563412146036.driver.CodeGenerator.generatedClassSize": {
+      "count": 28,
+      "max": 17971,
+      "mean": 2307.1748931106426,
+      "min": 524,
+      "p50": 564.0,
+      "p75": 2395.0,
+      "p95": 6130.0,
+      "p98": 17971.0,
+      "p99": 17971.0,
+      "p999": 17971.0,
+      "stddev": 3434.3366141735864
+    },
+    "local-1563412146036.driver.CodeGenerator.generatedMethodSize": {
+      "count": 101,
+      "max": 9274,
+      "mean": 174.32676438279793,
+      "min": 1,
+      "p50": 31.0,
+      "p75": 130.0,
+      "p95": 319.0,
+      "p98": 433.0,
+      "p99": 446.0,
+      "p999": 9274.0,
+      "stddev": 909.1861635224925
+    },
+    "local-1563412146036.driver.CodeGenerator.sourceCodeSize": {
+      "count": 14,
+      "max": 71408,
+      "mean": 8322.58728840047,
+      "min": 931,
+      "p50": 2156.0,
+      "p75": 8400.0,
+      "p95": 71408.0,
+      "p98": 71408.0,
+      "p99": 71408.0,
+      "p999": 71408.0,
+      "stddev": 17499.573970079844
+    }
+  },
+  "meters": {
+
+  },
+  "timers": {
+    "local-1563412146036.driver.DAGScheduler.messageProcessingTime": {
+      "count": 9702,
+      "max": 32.076957,
+      "mean": 0.10303821720497065,
+      "min": 0.00028399999999999996,
+      "p50": 0.054451,
+      "p75": 0.085531,
+      "p95": 0.127306,
+      "p98": 0.15156999999999998,
+      "p99": 0.16608599999999998,
+      "p999": 30.355964999999998,
+      "stddev": 1.2539534829768986,
+      "m15_rate": 11.768964440248979,
+      "m1_rate": 74.27438951038931,
+      "m5_rate": 27.883447833274033,
+      "mean_rate": 85.13501395744056,
+      "duration_units": "milliseconds",
+      "rate_units": "calls/second"
+    },
+    "local-1563412146036.driver.LiveListenerBus.listenerProcessingTime.org.apache.spark.HeartbeatReceiver": {
+      "count": 10139,
+      "max": 0.022328999999999998,
+      "mean": 0.0004830124373969752,
+      "min": 0.000053,
+      "p50": 0.000363,
+      "p75": 0.000607,
+      "p95": 0.000954,
+      "p98": 0.001152,
+      "p99": 0.001485,
+      "p999": 0.008435999999999999,
+      "stddev": 0.0006731136390409257,
+      "m15_rate": 14.868824234930052,
+      "m1_rate": 78.1525722697465,
+      "m5_rate": 31.15803851875935,
+      "mean_rate": 88.92469041303943,
+      "duration_units": "milliseconds",
+      "rate_units": "calls/second"
+    },
+    "local-1563412146036.driver.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener": {
+      "count": 10139,
+      "max": 1.081647,
+      "mean": 0.026042753363065038,
+      "min": 0.001047,
+      "p50": 0.018154,
+      "p75": 0.03376,
+      "p95": 0.06390699999999999,
+      "p98": 0.08130599999999999,
+      "p99": 0.11034899999999999,
+      "p999": 0.6568609999999999,
+      "stddev": 0.041120762252720586,
+      "m15_rate": 13.228376257301145,
+      "m1_rate": 77.78149604641847,
+      "m5_rate": 29.797889789886653,
+      "mean_rate": 88.4805556000678,
+      "duration_units": "milliseconds",
+      "rate_units": "calls/second"
+    },
+    "local-1563412146036.driver.LiveListenerBus.queue.appStatus.listenerProcessingTime": {
+      "count": 10139,
+      "max": 4.412796,
+      "mean": 0.07165732669417879,
+      "min": 0.004314,
+      "p50": 0.050345999999999995,
+      "p75": 0.08010199999999999,
+      "p95": 0.12603899999999998,
+      "p98": 0.151581,
+      "p99": 0.21285099999999998,
+      "p999": 4.412796,
+      "stddev": 0.24554641993155948,
+      "m15_rate": 13.228411226073897,
+      "m1_rate": 77.78567317516264,
+      "m5_rate": 29.798171804355537,
+      "mean_rate": 88.47832095591284,
+      "duration_units": "milliseconds",
+      "rate_units": "calls/second"
+    },
+    "local-1563412146036.driver.LiveListenerBus.queue.executorManagement.listenerProcessingTime": {
+      "count": 10139,
+      "max": 0.07973899999999999,
+      "mean": 0.0031036373084869714,
+      "min": 0.000403,
+      "p50": 0.0020169999999999997,
+      "p75": 0.003981999999999999,
+      "p95": 0.007923,
+      "p98": 0.010308,
+      "p99": 0.013117,
+      "p999": 0.019917999999999998,
+      "stddev": 0.002957645189655744,
+      "m15_rate": 14.868824234930052,
+      "m1_rate": 78.1525722697465,
+      "m5_rate": 31.15803851875935,
+      "mean_rate": 88.92075586289542,
+      "duration_units": "milliseconds",
+      "rate_units": "calls/second"
+    }
+  }
+}

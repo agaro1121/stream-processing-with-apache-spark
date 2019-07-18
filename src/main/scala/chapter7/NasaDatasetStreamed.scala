@@ -14,7 +14,7 @@ final case class WebLog(host: String, timestamp: Timestamp, request: String, htt
 object NasaDatasetStreamed extends SparkBoilerplate {
 
   import spark.implicits._
-
+  spark.streams.addListener(TriggerListener())
 
   def main(args: Array[String]): Unit = {
 
@@ -59,19 +59,8 @@ object NasaDatasetStreamed extends SparkBoilerplate {
       //      .option("truncate", false) // for console
       .start()
 
-    val scheduler = Executors.newScheduledThreadPool(1)
-    // show status every second
-    val sf = scheduler.scheduleAtFixedRate(new Runnable {
-      override def run(): Unit = {
-        if(query.isActive) {
-          val urlRanks = spark.sql("select * from urlranks")
-          urlRanks.select($"request", $"window", $"count").orderBy(desc("count")).show(false)
-        }
-      }
-    }, 500L, 1000L, TimeUnit.MILLISECONDS)
 
     query.awaitTermination()
-    sf.cancel(true)
   }
 
 }
