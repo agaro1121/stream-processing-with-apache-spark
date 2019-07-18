@@ -14,6 +14,10 @@ final case class WebLog(host: String, timestamp: Timestamp, request: String, htt
 object NasaDatasetStreamed extends SparkBoilerplate {
 
   import spark.implicits._
+
+  /**
+    * Need to register any StreamingQueryListeners
+    * */
   spark.streams.addListener(TriggerListener())
 
   def main(args: Array[String]): Unit = {
