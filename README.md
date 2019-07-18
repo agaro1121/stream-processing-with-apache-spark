@@ -21,4 +21,4 @@ Clean up Sample Dataset:
 
 ### Chapter 7
 1. run tcp server that delivers logs: `sbt 'runMain chapter7.TcpServerRunner'`
-2. run spark job: `chapter7.NasaDatasetStreamed`
+2. run spark job: `sbt 'runMain chapter7.NasaDatasetStreamed'`
