@@ -2,15 +2,14 @@ package chapter7
 
 import java.io.File
 import java.nio.file.Paths
-
 import akka.actor.ActorSystem
-import akka.stream.{ActorMaterializer, IOResult, Materializer}
-import akka.stream.scaladsl.{FileIO, Flow, Framing, Sink, Source, Tcp}
+import akka.stream.{ActorMaterializer, Materializer}
+import akka.stream.scaladsl.{FileIO, Flow, Framing, Source, Tcp}
 import akka.util.ByteString
-
 import scala.concurrent.Future
 import scala.concurrent.duration._
 import scala.language.postfixOps
+import common.DatasetHelpers
 
 object TCPServer {
   def start() = {
@@ -30,15 +29,16 @@ object TCPServer {
       }
     }
 
-    val files = getListOfFiles("/Users/hierro/git/datasets/NASA-weblogs/nasa_dataset_july_1995")
+    val files = getListOfFiles(DatasetHelpers.datasetDirectory)
         .filter(_.endsWith(".json"))
 
     println(s"files=${files.mkString("\n")}")
 
     val flow = Flow[ByteString]
       .via(Framing.delimiter(ByteString("\n"), maximumFrameLength = 256, allowTruncation = true))
-      // Required because spark does not send an initial message
-      // This sends a fake message to the server to initiate the stream of text
+      /* Required because the Spark socket client does not send an initial message
+         This sends a fake message to itself to initiate the stream of text
+       */
       .merge(Source.single("{}"))
       .flatMapConcat { message =>
         println(s"Received message=$message")
@@ -46,7 +46,8 @@ object TCPServer {
           .flatMapConcat(file => FileIO.fromPath(Paths.get(file)))
       }
       .throttle(40, 500 millis)
-//      .take(40) // in case you want to short-circuit your stream
+    // uncomment below in case you want to end your stream early
+    //.take(40)
 
     connections.runForeach { connection =>
       println(s"New connection from: ${connection.remoteAddress}")

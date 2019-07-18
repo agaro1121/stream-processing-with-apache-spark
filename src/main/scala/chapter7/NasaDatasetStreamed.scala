@@ -1,15 +1,11 @@
 package chapter7
 
-import java.sql.Timestamp
-import java.util.concurrent.{Executors, TimeUnit}
-
+import common.DatasetHelpers.WebLog
 import common.SparkBoilerplate
 import org.apache.spark.sql.{DataFrame, Dataset, Encoders}
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.streaming.OutputMode
-import org.apache.spark.sql.types.{IntegerType, StructType}
-
-final case class WebLog(host: String, timestamp: Timestamp, request: String, http_reply: Int, bytes: Long)
+import org.apache.spark.sql.types.StructType
 
 object NasaDatasetStreamed extends SparkBoilerplate {
 

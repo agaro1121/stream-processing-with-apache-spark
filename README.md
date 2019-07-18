@@ -9,7 +9,16 @@ libraryDependencies ++= Seq(
 ).map(_ % sparkVersion)
 ```
 
+- Get Sample Dataset
+  1. `git clone https://github.com/stream-processing-with-spark/datasets.git`
+  2. `cd datasets/NASA-weblogs`
+  3. `tar -xvf nasa_dataset_july_1995.tgz`
+  4. `mv nasa_dataset_july_1995 /tmp`
 
-#### chapter 7
-- clone https://github.com/stream-processing-with-spark/datasets
+Clean up Sample Dataset:
+- `rm -rf /tmp/nasa_dataset_july_1995`
 
+
+### Chapter 7
+1. run tcp server that delivers logs: `sbt 'runMain chapter7.TcpServerRunner'`
+2. run spark job: `chapter7.NasaDatasetStreamed`
