@@ -22,3 +22,23 @@ Clean up Sample Dataset:
 ### Chapter 7
 1. run tcp server that delivers logs: `sbt 'runMain chapter7.TcpServerRunner'`
 2. run spark job: `sbt 'runMain chapter7.NasaDatasetStreamed'`
+
+# Metrics
+    - configured in `projectRoot/metrics.properties`
+- run docker-compose:
+    1. `cd docker`
+    2. `docker-compose up`
+    
+Graphite: `http://locahost`    
+
+Grafana
+- Set up Graphite as a datasource ![screenshot](GraphiteDatasource.png)    
+    1. `http://locahost:3000`
+    2. `http://localhost:3000/datasources`
+    3. Select 'Graphite'
+    4. config:
+        - url: http://graphite:80
+        - Access: Server (default)
+        - Select Basic Auth - Creds: root/root
+        - version: 1.1.x
+        

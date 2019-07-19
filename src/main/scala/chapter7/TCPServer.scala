@@ -45,7 +45,7 @@ object TCPServer {
         Source(files)
           .flatMapConcat(file => FileIO.fromPath(Paths.get(file)))
       }
-      .throttle(40, 500 millis)
+      .throttle(5, 500 millis)
     // uncomment below in case you want to end your stream early
     //.take(40)
 

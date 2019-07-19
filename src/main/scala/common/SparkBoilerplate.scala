@@ -25,6 +25,7 @@ trait SparkBoilerplate {
       * },
       * */
     .config("spark.sql.streaming.metricsEnabled", true)
+    .config("spark.metrics.conf", "metrics.properties")
     .master("local[3]")
     .getOrCreate()
 

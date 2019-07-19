@@ -1,0 +1,61 @@
+version: "3.1"
+
+services:
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+#    volumes:
+#      - ${PWD}/grafana.ini:/etc/grafana/grafana.ini
+#      - ${PWD}/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
+    networks:
+      - grafana-net
+    volumes:
+      - grafana-volume
+
+  graphite:
+   image: graphiteapp/graphite-statsd
+   container_name: graphite
+   restart: always
+   ports:
+     - "80:80"
+     - "8080:8080"
+     - "2003-2004:2003-2004"
+     - "2023-2024:2023-2024"
+     - "8125:8125/udp"
+     - "8126:8126"
+   networks:
+     - grafana-net
+
+
+################# IGNORE EVERYTHING BELOW FOR NOW. IT'S TO GET PROMETHEUS WORKING AS WELL BUT IT'S NOT WORKING
+#  graphite_exporter:
+#    image: prom/graphite-exporter
+#    command: "--graphite.mapping-config=/tmp/graphite_mapping.conf"
+#    container_name: graphite_exporter
+#    volumes:
+#      - ${PWD}/graphite_mapping.conf:/tmp/graphite_mapping.conf
+#    ports:
+#      - "9108:9108"
+#      - "9109:9109"
+#      - "9109:9109/udp"
+#
+#  prometheus:
+#    image: prom/prometheus
+#    container_name: prometheus
+#    volumes:
+#      - ${PWD}/prometheus.yml:/etc/prometheus/prometheus.yml
+#    ports:
+#      - "9090:9090"
+#    links:
+#      - graphite_exporter
+
+
+networks:
+  grafana-net:
+
+volumes:
+  grafana-volume:
+      external: true
