@@ -33,10 +33,10 @@ services:
 ################# IGNORE EVERYTHING BELOW FOR NOW. IT'S TO GET PROMETHEUS WORKING AS WELL BUT IT'S NOT WORKING
 #  graphite_exporter:
 #    image: prom/graphite-exporter
-#    command: "--graphite.mapping-config=/tmp/graphite_mapping.conf"
+#    command: "--graphite.mapping-config=/tmp/graphite_mapping.yaml"
 #    container_name: graphite_exporter
 #    volumes:
-#      - ${PWD}/graphite_mapping.conf:/tmp/graphite_mapping.conf
+#      - ${PWD}/graphite_mapping.yaml:/tmp/graphite_mapping.yaml
 #    ports:
 #      - "9108:9108"
 #      - "9109:9109"

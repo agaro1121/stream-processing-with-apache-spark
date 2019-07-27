@@ -34,7 +34,7 @@ mappings:
 - match: '*.*.app.StreamingMetrics.*.*'
     name: app_Metrics
     labels:
-        application: $1
+      application: $1
       executor_id: $2
       type: $3
       qty: $4

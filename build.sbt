@@ -8,7 +8,9 @@ val sparkVersion = "2.4.3"
 
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core",
-  "org.apache.spark" %% "spark-sql"
+  "org.apache.spark" %% "spark-sql",
+  "org.apache.spark" %% "spark-catalyst",
+  "org.apache.spark" %% "spark-streaming"
 ).map(_ % sparkVersion)
 
 libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.23"
