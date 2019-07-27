@@ -20,8 +20,8 @@ object NasaDatasetStreamed extends SparkBoilerplate {
 
     val stream = spark.readStream
       .format("socket")
-      .option("host", "localhost")
-      .option("port", 9999)
+      .option("host", socketServerHost)
+      .option("port", socketServerPort)
       .load()
 
     val webLogSchema: StructType = Encoders.product[WebLog].schema

@@ -9,7 +9,7 @@ object DStreamHelloWorld extends SparkBoilerplate with App {
 
   val scc = new StreamingContext(spark.sparkContext, Duration(2000L))
 
-  val dstream = scc.socketTextStream("localhost", 9999)
+  val dstream = scc.socketTextStream(socketServerHost, socketServerPort)
 
   val countStream = dstream.count
 

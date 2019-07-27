@@ -29,4 +29,7 @@ trait SparkBoilerplate {
     .master("local[3]")
     .getOrCreate()
 
+  val socketServerHost = "localhost"
+  val socketServerPort = 9999
+
 }

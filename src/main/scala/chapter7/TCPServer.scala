@@ -2,17 +2,20 @@ package chapter7
 
 import java.io.File
 import java.nio.file.Paths
+
+import akka.Done
 import akka.actor.ActorSystem
 import akka.stream.{ActorMaterializer, Materializer}
 import akka.stream.scaladsl.{FileIO, Flow, Framing, Source, Tcp}
 import akka.util.ByteString
+
 import scala.concurrent.Future
 import scala.concurrent.duration._
 import scala.language.postfixOps
 import common.DatasetHelpers
 
 object TCPServer {
-  def start() = {
+  def start(): Future[Done] = {
 
     implicit val actorSystem: ActorSystem = ActorSystem()
     implicit val mat: Materializer = ActorMaterializer()
