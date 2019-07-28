@@ -5,6 +5,10 @@ import scala.io.StdIn
 import common.SparkBoilerplate
 import org.apache.spark.streaming._
 
+
+/**
+  * Socket Source
+  * */
 object DStreamHelloWorld extends SparkBoilerplate with App {
 
   val scc = new StreamingContext(spark.sparkContext, Duration(2000L))
