@@ -2,7 +2,7 @@ package common
 
 import org.apache.spark.sql.SparkSession
 
-trait SparkBoilerplate {
+trait SparkBoilerplate extends CommonBoilerplate {
 
   val spark = SparkSession.builder
     .appName(this.getClass.getSimpleName)
@@ -29,7 +29,6 @@ trait SparkBoilerplate {
     .master("local[3]")
     .getOrCreate()
 
-  val socketServerHost = "localhost"
-  val socketServerPort = 9999
+
 
 }

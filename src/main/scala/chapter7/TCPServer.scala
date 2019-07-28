@@ -12,16 +12,16 @@ import akka.util.ByteString
 import scala.concurrent.Future
 import scala.concurrent.duration._
 import scala.language.postfixOps
-import common.DatasetHelpers
+import common.{CommonBoilerplate, DatasetHelpers}
 
-object TCPServer {
+object TCPServer extends CommonBoilerplate {
   def start(): Future[Done] = {
 
     implicit val actorSystem: ActorSystem = ActorSystem()
     implicit val mat: Materializer = ActorMaterializer()
 
     val connections: Source[Tcp.IncomingConnection, Future[Tcp.ServerBinding]] =
-      Tcp().bind("localhost", 9999)
+      Tcp().bind(socketServerHost, socketServerPort)
 
     def getListOfFiles(dir: String): List[String] = {
       val d = new File(dir)
